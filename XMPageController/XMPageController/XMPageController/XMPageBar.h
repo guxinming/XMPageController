@@ -88,6 +88,8 @@
 
 - (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
 - (void)registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier;
+- (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier index:(NSInteger)index;
+- (UICollectionViewCell *)cellForIndex:(NSInteger)index;
 
 - (void)reloadData;
 

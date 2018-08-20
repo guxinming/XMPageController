@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PageViewController.h"
+#import "CustomBarViewController.h"
 
 #define IS_IPHONEX     CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size)
 #define TABBAR_H       (IS_IPHONEX ? 83 : 49)
@@ -17,6 +18,7 @@
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (copy, nonatomic) NSArray *sourceArray;
 
 @end
 
@@ -24,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.sourceArray = @[@"DefaultBarStyle", @"CustomBar", @"progressNauty"];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - STATUS_H - TABBAR_H - 44) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -33,7 +37,7 @@
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.sourceArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -42,17 +46,28 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
+    cell.textLabel.text = self.sourceArray[indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    PageViewController *pageVC = [[PageViewController alloc] init];
-    [self.navigationController pushViewController:pageVC animated:YES];
+    if (indexPath.row == 0) {
+        PageViewController *pageVC = [[PageViewController alloc] init];
+        pageVC.progressW = 100;
+        [self.navigationController pushViewController:pageVC animated:YES];
+    } else if (indexPath.row == 1) {
+        CustomBarViewController *customBarVC = [[CustomBarViewController alloc] init];
+        [self.navigationController pushViewController:customBarVC animated:YES];
+    } else if (indexPath.row == 2) {
+        PageViewController *pageVC = [[PageViewController alloc] init];
+        pageVC.progressW = 10;
+        [self.navigationController pushViewController:pageVC animated:YES];
+    }
     
 }
 

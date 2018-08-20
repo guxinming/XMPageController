@@ -85,6 +85,28 @@
 
     CGFloat currentMidX = currentX + currentWidth / 2.0;
     CGFloat nextMidX   = nextX + nextWidth / 2.0;
+    
+    if (self.style == XMProgressTriangleStyle) {
+        
+        CGMutablePathRef linePath = CGPathCreateMutable();
+        CGPathMoveToPoint(linePath, NULL, 0, height);
+        CGPathAddLineToPoint(linePath, NULL, self.frame.size.width, height);
+        
+        CGContextAddPath(ctx, linePath);
+        [self.color set];
+        CGContextStrokePath(ctx);
+        CGPathRelease(linePath);
+        
+        CGMutablePathRef trianglePath = CGPathCreateMutable();
+        CGPathMoveToPoint(trianglePath, NULL, startX + width / 2.0 - height, height);
+        CGPathAddLineToPoint(trianglePath, NULL, startX + width / 2.0, 0);
+        CGPathAddLineToPoint(trianglePath, NULL, startX + width / 2.0 + height, height);
+        CGContextAddPath(ctx, trianglePath);
+        [self.color set];
+        CGContextFillPath(ctx);
+        CGPathRelease(trianglePath);
+        return;
+    }
 
     if (rate <= 0.5) {
         startX = currentX + (currentMidX - currentX) * rate * 2.0;
@@ -100,7 +122,7 @@
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(startX, 0, width, height) cornerRadius:self.frame.size.height / 2];
     CGContextAddPath(ctx, path.CGPath);
 
-    CGContextSetFillColorWithColor(ctx, self.lineColor.CGColor);
+    CGContextSetFillColorWithColor(ctx, self.color.CGColor);
     CGContextFillPath(ctx);
 }
 

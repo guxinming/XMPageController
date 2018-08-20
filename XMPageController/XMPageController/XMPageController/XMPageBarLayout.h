@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "XMPageCotrol.h"
 
 typedef NS_ENUM(NSInteger, XMPagerBarStyle) {
     XMPagerBarStyleNone,
@@ -63,6 +64,7 @@ typedef NS_ENUM(NSInteger, XMPagerBarStyle) {
 @property (strong, nonatomic) UIColor *selectColor;
 
 #pragma mark - progressView
+@property (assign, nonatomic) XMProgressStyle style;
 /**
  进度条的宽度，如果不设置默认为barItem的宽度，且不能大于baritem的宽度
  */

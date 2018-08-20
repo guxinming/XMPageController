@@ -10,4 +10,6 @@
 
 @interface PageViewController : UIViewController
 
+@property (assign, nonatomic) CGFloat progressW;
+
 @end

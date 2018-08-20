@@ -26,6 +26,9 @@
 		0097C98E212570F500A60F64 /* Test3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097C98D212570F500A60F64 /* Test3ViewController.m */; };
 		0097C9912125710900A60F64 /* Test4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097C9902125710900A60F64 /* Test4ViewController.m */; };
 		0097C9942125711600A60F64 /* Test5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097C9932125711600A60F64 /* Test5ViewController.m */; };
+		0097C9B2212AB8D000A60F64 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097C9B0212AB8D000A60F64 /* CustomCollectionViewCell.m */; };
+		0097C9B3212AB8D000A60F64 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0097C9B1212AB8D000A60F64 /* CustomCollectionViewCell.xib */; };
+		0097C9B6212AB9FF00A60F64 /* CustomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,12 @@
 		0097C9902125710900A60F64 /* Test4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test4ViewController.m; sourceTree = "<group>"; };
 		0097C9922125711600A60F64 /* Test5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test5ViewController.h; sourceTree = "<group>"; };
 		0097C9932125711600A60F64 /* Test5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test5ViewController.m; sourceTree = "<group>"; };
+		0097C9AF212AB8D000A60F64 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		0097C9B0212AB8D000A60F64 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		0097C9B1212AB8D000A60F64 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		0097C9B4212AB9FF00A60F64 /* CustomBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBarViewController.h; sourceTree = "<group>"; };
+		0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBarViewController.m; sourceTree = "<group>"; };
+		0097C9B7212AC4D100A60F64 /* XMPageCotrol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPageCotrol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +189,7 @@
 				0038F2D521213278005388CB /* XMPageBarCell.m */,
 				001E74D92123C78B00F06DEA /* XMProgressView.h */,
 				001E74DA2123C78B00F06DEA /* XMProgressView.m */,
+				0097C9B7212AC4D100A60F64 /* XMPageCotrol.h */,
 			);
 			path = XMPageController;
 			sourceTree = "<group>";
@@ -189,6 +199,8 @@
 			children = (
 				00007B1021183038007DC729 /* PageViewController.h */,
 				00007B1121183038007DC729 /* PageViewController.m */,
+				0097C9B4212AB9FF00A60F64 /* CustomBarViewController.h */,
+				0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */,
 				0038F2DC21218E74005388CB /* Test1ViewController.h */,
 				0038F2DD21218E74005388CB /* Test1ViewController.m */,
 				0038F2DF21219021005388CB /* Test2ViewController.h */,
@@ -199,6 +211,9 @@
 				0097C9902125710900A60F64 /* Test4ViewController.m */,
 				0097C9922125711600A60F64 /* Test5ViewController.h */,
 				0097C9932125711600A60F64 /* Test5ViewController.m */,
+				0097C9AF212AB8D000A60F64 /* CustomCollectionViewCell.h */,
+				0097C9B0212AB8D000A60F64 /* CustomCollectionViewCell.m */,
+				0097C9B1212AB8D000A60F64 /* CustomCollectionViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +324,7 @@
 				00007AE621181FD8007DC729 /* LaunchScreen.storyboard in Resources */,
 				00007AE321181FD8007DC729 /* Assets.xcassets in Resources */,
 				00007AE121181FD7007DC729 /* Main.storyboard in Resources */,
+				0097C9B3212AB8D000A60F64 /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,12 +352,14 @@
 				0097C9942125711600A60F64 /* Test5ViewController.m in Sources */,
 				00007B1821197542007DC729 /* XMPageBar.m in Sources */,
 				00007ADE21181FD7007DC729 /* ViewController.m in Sources */,
+				0097C9B6212AB9FF00A60F64 /* CustomBarViewController.m in Sources */,
 				0097C98E212570F500A60F64 /* Test3ViewController.m in Sources */,
 				0038F2DE21218E74005388CB /* Test1ViewController.m in Sources */,
 				0038F2D721213278005388CB /* XMPageBarCell.m in Sources */,
 				00007AE921181FD8007DC729 /* main.m in Sources */,
 				00007B1B2119800D007DC729 /* XMPageBarLayout.m in Sources */,
 				0097C9912125710900A60F64 /* Test4ViewController.m in Sources */,
+				0097C9B2212AB8D000A60F64 /* CustomCollectionViewCell.m in Sources */,
 				00007B0E21182665007DC729 /* XMPageViewController.m in Sources */,
 				001E74DB2123C78B00F06DEA /* XMProgressView.m in Sources */,
 				0038F2E121219021005388CB /* Test2ViewController.m in Sources */,

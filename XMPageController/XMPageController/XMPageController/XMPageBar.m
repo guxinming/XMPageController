@@ -18,6 +18,8 @@
  */
 @property (strong, nonatomic) XMProgressView *progressView;
 
+@property (strong, nonatomic) NSMutableArray *identifierArray;
+
 @end
 
 @implementation XMPageBar
@@ -39,8 +41,8 @@
     if (!_progressView) {
         _progressView = [[XMProgressView alloc] init];
         _progressView.backgroundColor = [UIColor whiteColor];
-
-        _progressView.lineColor = self.layout.progressColor;
+        _progressView.style = self.layout.style;
+        _progressView.color = self.layout.progressColor;
         _progressView.progressSwitchAnimation = self.layout.progressSwitchAnimation;
         NSMutableArray *progressFrames = [NSMutableArray array];
         CGFloat width = 0;
@@ -70,6 +72,13 @@
     return _layout;
 }
 
+- (NSMutableArray *)identifierArray {
+    if (!_identifierArray) {
+        _identifierArray = [[NSMutableArray alloc] init];
+    }
+    return _identifierArray;
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfItemInPageBar)]) {
@@ -84,6 +93,7 @@
     
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(pageBar:cellForItemAtIndex:)]) {
         UICollectionViewCell *cell = [self.dataSource pageBar:self cellForItemAtIndex:indexPath.row];
+        NSAssert(cell != nil, @"cell must not be nil");
         return cell;
     } else {
         XMPageBarCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"xmPageBarCell" forIndexPath:indexPath];
@@ -131,11 +141,32 @@
 
 #pragma mark - public method
 - (void)registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier {
+    if (![self.identifierArray containsObject:identifier]) {
+        [self.identifierArray addObject:identifier];
+    }
+    
     [self.collectView registerNib:nib forCellWithReuseIdentifier:identifier];
 }
 
 - (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
+    if (![self.identifierArray containsObject:identifier]) {
+        [self.identifierArray addObject:identifier];
+    }
     [self.collectView registerClass:cellClass forCellWithReuseIdentifier:identifier];
+}
+
+- (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier index:(NSInteger)index {
+    if (![self.identifierArray containsObject:identifier]) {
+        NSAssert(NO, @"you not register cell for this identifier");
+    }
+    return [self.collectView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+}
+
+- (UICollectionViewCell *)cellForIndex:(NSInteger)index {
+    if (index > self.collectView.numberOfSections - 1 && index < 0) {
+        NSAssert(NO, @"the index beyond the bounds of cellNum");
+    }
+    return [self.collectView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
 }
 
 - (void)reloadData {

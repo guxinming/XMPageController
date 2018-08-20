@@ -10,15 +10,18 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "XMPageCotrol.h"
 
 @interface XMProgressView : UIView
+
+@property (assign, nonatomic) XMProgressStyle style;
 
 @property (copy, nonatomic)   NSArray *progressFrames;
 
 /** 进度条的速度因数，默认为 15，越小越快， 大于 0 */
 @property (nonatomic, assign) CGFloat speedFactor;
 
-@property (strong, nonatomic) UIColor *lineColor;
+@property (strong, nonatomic) UIColor *color;
 @property (assign, nonatomic) CGFloat progress;
 
 /**
