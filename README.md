@@ -7,4 +7,9 @@
  
  XMPageBar是一个UICollectionView和progressView的结合。XMPageViewController就是一个页面控制器，主体是UIScrollview。两者分离，通过提供的方法进行交互关联。
 
+## 1.默认bar的样式
 ![1.defaultBar样式](https://ws3.sinaimg.cn/large/006tNbRwly1fuhbuv4arfg30bi0esnpd.gif)
+## 2.自定义bar和progressView三角形的样式
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fuhcasqve1g30bi0esguy.gif)
+## 3.流动的样式
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fuhcchswyng30bi0esqf9.gif)
