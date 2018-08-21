@@ -197,10 +197,8 @@
 		0097C9952125712500A60F64 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				00007B1021183038007DC729 /* PageViewController.h */,
-				00007B1121183038007DC729 /* PageViewController.m */,
-				0097C9B4212AB9FF00A60F64 /* CustomBarViewController.h */,
-				0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */,
+				0097C9B9212BB9CD00A60F64 /* DefaultPageBar */,
+				0097C9B8212BB9BC00A60F64 /* CustomPageBar */,
 				0038F2DC21218E74005388CB /* Test1ViewController.h */,
 				0038F2DD21218E74005388CB /* Test1ViewController.m */,
 				0038F2DF21219021005388CB /* Test2ViewController.h */,
@@ -211,11 +209,29 @@
 				0097C9902125710900A60F64 /* Test4ViewController.m */,
 				0097C9922125711600A60F64 /* Test5ViewController.h */,
 				0097C9932125711600A60F64 /* Test5ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0097C9B8212BB9BC00A60F64 /* CustomPageBar */ = {
+			isa = PBXGroup;
+			children = (
+				0097C9B4212AB9FF00A60F64 /* CustomBarViewController.h */,
+				0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */,
 				0097C9AF212AB8D000A60F64 /* CustomCollectionViewCell.h */,
 				0097C9B0212AB8D000A60F64 /* CustomCollectionViewCell.m */,
 				0097C9B1212AB8D000A60F64 /* CustomCollectionViewCell.xib */,
 			);
-			path = Controller;
+			path = CustomPageBar;
+			sourceTree = "<group>";
+		};
+		0097C9B9212BB9CD00A60F64 /* DefaultPageBar */ = {
+			isa = PBXGroup;
+			children = (
+				00007B1021183038007DC729 /* PageViewController.h */,
+				00007B1121183038007DC729 /* PageViewController.m */,
+			);
+			path = DefaultPageBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
