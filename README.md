@@ -10,6 +10,6 @@
 ## 1.默认bar的样式
 ![1.defaultBar样式](https://ws3.sinaimg.cn/large/006tNbRwly1fuhbuv4arfg30bi0esnpd.gif)
 ## 2.自定义bar和progressView三角形的样式
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fuhcasqve1g30bi0esguy.gif)
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fuhcekqh4ng30bi0es1kx.gif)
 ## 3.流动的样式
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fuhcchswyng30bi0esqf9.gif)
