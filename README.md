@@ -12,4 +12,4 @@
 ## 2.自定义bar和progressView三角形的样式
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fuhcekqh4ng30bi0es1kx.gif)
 ## 3.流动的样式
-![](https://ws3.sinaimg.cn/large/006tNbRwly1fuhcchswyng30bi0esqf9.gif)
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fuhcgpwrzyg30bi0es4qp.gif)
