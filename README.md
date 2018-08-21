@@ -6,3 +6,5 @@
  库中主体是两个部分XMPageBar，XMPageViewController
  
  XMPageBar是一个UICollectionView和progressView的结合。XMPageViewController就是一个页面控制器，主体是UIScrollview。两者分离，通过提供的方法进行交互关联。
+
+![1.defaultBar样式](https://github.com/guxinming/XMPageController/edit/master/ExampleGif/default.gif)
