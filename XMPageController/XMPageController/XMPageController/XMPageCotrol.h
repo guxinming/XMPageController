@@ -14,5 +14,6 @@ typedef NS_ENUM(NSInteger, XMProgressStyle) {
     XMProgressTriangleStyle
 };
 
+#import <CoreGraphics/CoreGraphics.h>
 
 #endif /* XMPageCotrol_h */
