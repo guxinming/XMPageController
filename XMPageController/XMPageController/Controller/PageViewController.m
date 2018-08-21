@@ -99,7 +99,7 @@
 }
 
 - (void)pageController:(XMPageViewController *)pageController transitionFrom:(NSInteger)fromIndex toIndex:(NSInteger)toIndex animated:(BOOL)animated {
-    [self.pageBar selectItemAtIndex:toIndex animated:YES];
+    [self.pageBar selectItemAtIndex:toIndex];
 }
 
 - (void)pageController:(XMPageViewController *)pageController transitProgress:(float)progress isDragging:(BOOL)isDragging {

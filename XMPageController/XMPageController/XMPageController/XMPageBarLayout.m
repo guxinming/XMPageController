@@ -22,7 +22,6 @@
     self = [super init];
     if (self) {
         self.progressH = 3;
-        self.progressSwitchAnimation = YES;
         self.oringinX = 0;
     }
     return self;
@@ -85,6 +84,13 @@
     } else {
         _progressH = 5;
     }
+}
+
+- (void)setProgressSpeed:(CGFloat)progressSpeed {
+    if (progressSpeed <= 1) {
+        progressSpeed = 1;
+    }
+    _progressSpeed = progressSpeed;
 }
 
 - (CGSize)collectionViewContentSize {

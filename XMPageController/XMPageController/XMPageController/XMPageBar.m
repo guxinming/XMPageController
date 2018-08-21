@@ -43,7 +43,7 @@
         _progressView.backgroundColor = [UIColor whiteColor];
         _progressView.style = self.layout.style;
         _progressView.color = self.layout.progressColor;
-        _progressView.progressSwitchAnimation = self.layout.progressSwitchAnimation;
+        _progressView.speedFactor = self.layout.progressSpeed;
         NSMutableArray *progressFrames = [NSMutableArray array];
         CGFloat width = 0;
         for (int i = 0; i < [self.collectView numberOfItemsInSection:0]; i++) {
@@ -116,7 +116,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self selectItemAtIndex:indexPath.row animated:YES];
+    [self selectItemAtIndex:indexPath.row];
     if (self.delegate && [self.delegate respondsToSelector:@selector(pageBar:didSelectItemAtIndex:)]) {
         [self.delegate pageBar:self didSelectItemAtIndex:indexPath.row];
     }
@@ -183,7 +183,7 @@
     [self.collectView reloadData];
 }
 
-- (void)selectItemAtIndex:(NSInteger)index animated:(BOOL)animated {
+- (void)selectItemAtIndex:(NSInteger)index {
     
     self.curIndex = index;
     [self.collectView reloadData];
@@ -213,26 +213,13 @@
 }
 
 - (void)refreshProgress:(float)progress isDragging:(BOOL)isDragging animated:(BOOL)animated {
-    
-    if (!animated) {
-        self.progressView.progressSwitchAnimation = NO;
-        progress = progress > self.curIndex ? self.curIndex + 1 : self.curIndex - 1;
-        if (progress > [self.collectView numberOfItemsInSection:0] - 1) {
-            progress = [self.collectView numberOfItemsInSection:0];
-        }
-        if (progress < 0) {
-            progress = 0;
-        }
-        self.progressView.progress = progress;
-        return;
-    }
-    
+
     if (!isDragging) {
-        [self.progressView moveToPostion:(int)progress];
+        [self.progressView moveToPostion:(int)progress animated:animated];
         return;
     }
     
-    if (self.dataSource && ![self.dataSource respondsToSelector:@selector(pageBar:cellForItemAtIndex:)]) {
+    if (self.dataSource) {
 
         NSInteger nextIndex = progress > self.curIndex ? self.curIndex + 1 : self.curIndex - 1;
         if (nextIndex > [self.collectView numberOfItemsInSection:0] - 1) {
@@ -241,19 +228,25 @@
         if (nextIndex < 0) {
             nextIndex = 0;
         }
-        
-        if (nextIndex != self.curIndex) {
-            XMPageBarCell *fromCell = (XMPageBarCell *)[self.collectView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.curIndex inSection:0]];
-            XMPageBarCell *tocell = (XMPageBarCell *)[self.collectView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:nextIndex inSection:0]];
-            CGFloat rate = fabs(progress - self.curIndex);
-            
-            CGFloat narR = 0, narG = 0, narB = 0, narA = 1;
-            [self.layout.normalColor getRed:&narR green:&narG blue:&narB alpha:&narA];
-            CGFloat selR = 0,selG = 0,selB = 0, selA = 1;
-            [self.layout.selectColor getRed:&selR green:&selG blue:&selB alpha:&selA];
-            CGFloat detalR = narR - selR ,detalG = narG - selG,detalB = narB - selB,detalA = narA - selA;
-            fromCell.titleLabel.textColor = [UIColor colorWithRed:selR+detalR*rate green:selG+detalG*rate blue:selB+detalB*rate alpha:selA+detalA*rate];
-            tocell.titleLabel.textColor = [UIColor colorWithRed:narR-detalR*rate green:narG-detalG*rate blue:narB-detalB*rate alpha:narA-detalA*rate];
+        if ([self.dataSource respondsToSelector:@selector(pageBar:cellForItemAtIndex:)]) {
+            if (nextIndex == self.curIndex) return;
+            if (self.delegate && [self.delegate respondsToSelector:@selector(pageBar:transitFromIndex:toIndex:progress:)]) {
+                [self.delegate pageBar:self transitFromIndex:self.curIndex toIndex:nextIndex progress:fabs(progress - self.curIndex)];
+            }
+        } else {
+            if (nextIndex != self.curIndex) {
+                XMPageBarCell *fromCell = (XMPageBarCell *)[self.collectView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.curIndex inSection:0]];
+                XMPageBarCell *tocell = (XMPageBarCell *)[self.collectView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:nextIndex inSection:0]];
+                CGFloat rate = fabs(progress - self.curIndex);
+                
+                CGFloat narR = 0, narG = 0, narB = 0, narA = 1;
+                [self.layout.normalColor getRed:&narR green:&narG blue:&narB alpha:&narA];
+                CGFloat selR = 0,selG = 0,selB = 0, selA = 1;
+                [self.layout.selectColor getRed:&selR green:&selG blue:&selB alpha:&selA];
+                CGFloat detalR = narR - selR ,detalG = narG - selG,detalB = narB - selB,detalA = narA - selA;
+                fromCell.titleLabel.textColor = [UIColor colorWithRed:selR+detalR*rate green:selG+detalG*rate blue:selB+detalB*rate alpha:selA+detalA*rate];
+                tocell.titleLabel.textColor = [UIColor colorWithRed:narR-detalR*rate green:narG-detalG*rate blue:narB-detalB*rate alpha:narA-detalA*rate];
+            }
         }
     }
     

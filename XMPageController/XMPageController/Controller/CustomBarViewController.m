@@ -38,6 +38,7 @@
     pageBar.layout.progressColor = [UIColor blueColor];
     pageBar.layout.progressW = 100;
     pageBar.layout.progressH = 5;
+    pageBar.layout.progressSpeed = 10;
     pageBar.layout.style = XMProgressTriangleStyle;
     [pageBar registerNib:[UINib nibWithNibName:@"CustomCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"pageBarCell"];
     [self.view addSubview:pageBar];
@@ -111,32 +112,23 @@
 }
 
 - (void)pageController:(XMPageViewController *)pageController transitionFrom:(NSInteger)fromIndex toIndex:(NSInteger)toIndex animated:(BOOL)animated {
-    [self.pageBar selectItemAtIndex:toIndex animated:YES];
+    [self.pageBar selectItemAtIndex:toIndex];
+}
+
+- (void)pageBar:(XMPageBar *)pageBar transitFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex progress:(float)progress {
+    CustomCollectionViewCell *fromcell = (CustomCollectionViewCell *)[pageBar cellForIndex:fromIndex];
+    CustomCollectionViewCell *tocell = (CustomCollectionViewCell *)[pageBar cellForIndex:toIndex];
+    CGFloat narR = 0, narG = 0, narB = 0, narA = 1;
+    [[UIColor grayColor] getRed:&narR green:&narG blue:&narB alpha:&narA];
+    CGFloat selR = 0,selG = 0,selB = 0, selA = 1;
+    [[UIColor blueColor] getRed:&selR green:&selG blue:&selB alpha:&selA];
+    CGFloat detalR = narR - selR ,detalG = narG - selG,detalB = narB - selB,detalA = narA - selA;
+    fromcell.desLabel.textColor = fromcell.titleLabel.textColor = [UIColor colorWithRed:selR+detalR*progress green:selG+detalG*progress blue:selB+detalB*progress alpha:selA+detalA*progress];
+    tocell.desLabel.textColor = tocell.titleLabel.textColor = [UIColor colorWithRed:narR-detalR*progress green:narG-detalG*progress blue:narB-detalB*progress alpha:narA-detalA*progress];
 }
 
 - (void)pageController:(XMPageViewController *)pageController transitProgress:(float)progress isDragging:(BOOL)isDragging {
     [self.pageBar refreshProgress:progress isDragging:isDragging animated:YES];
-    NSInteger nextIndex = progress > self.pageBar.curIndex ? self.pageBar.curIndex + 1 : self.pageBar.curIndex - 1;
-    if (nextIndex > 9) {
-        nextIndex = 9;
-    }
-    if (nextIndex < 0) {
-        nextIndex = 0;
-    }
-    
-    if (nextIndex != self.pageBar.curIndex) {
-        CustomCollectionViewCell *fromCell = (CustomCollectionViewCell *)[self.pageBar cellForIndex:self.pageBar.curIndex];
-        CustomCollectionViewCell *tocell = (CustomCollectionViewCell *)[self.pageBar cellForIndex:nextIndex];
-        CGFloat rate = fabs(progress - self.pageBar.curIndex);
-        
-        CGFloat narR = 0, narG = 0, narB = 0, narA = 1;
-        [[UIColor grayColor] getRed:&narR green:&narG blue:&narB alpha:&narA];
-        CGFloat selR = 0,selG = 0,selB = 0, selA = 1;
-        [[UIColor blueColor] getRed:&selR green:&selG blue:&selB alpha:&selA];
-        CGFloat detalR = narR - selR ,detalG = narG - selG,detalB = narB - selB,detalA = narA - selA;
-        fromCell.desLabel.textColor = fromCell.titleLabel.textColor = [UIColor colorWithRed:selR+detalR*rate green:selG+detalG*rate blue:selB+detalB*rate alpha:selA+detalA*rate];
-        tocell.desLabel.textColor = tocell.titleLabel.textColor = [UIColor colorWithRed:narR-detalR*rate green:narG-detalG*rate blue:narB-detalB*rate alpha:narA-detalA*rate];
-    }
 }
 
 @end

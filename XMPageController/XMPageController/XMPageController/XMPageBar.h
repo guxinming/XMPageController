@@ -69,6 +69,16 @@
  */
 - (void)pageBar:(XMPageBar *)pageBar didDeselectItemAtIndex:(NSInteger)index;
 
+/**
+ pageBar的滑动回调
+
+ @param pageBar   当前pageBar
+ @param fromIndex 当前的index
+ @param toIndex   目标Index
+ @param progress  从当前index到目标index的进度（0-1）
+ */
+- (void)pageBar:(XMPageBar *)pageBar transitFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex progress:(float)progress;
+
 @end
 
 @interface XMPageBar : UIView
@@ -86,14 +96,40 @@
  */
 @property (assign, nonatomic) NSInteger curIndex;
 
+#pragma mark - 这里是collectionView的方法包装
+/**
+ 向pagebar注册cell
+
+ @param cellClass  cell类
+ @param identifier 标识
+ */
 - (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
 - (void)registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier;
 - (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier index:(NSInteger)index;
+/**
+ 通过inde获取cell
+
+ @param index 索引
+ @return      返回索引值的cell，如果cell不存在为nil
+ */
 - (UICollectionViewCell *)cellForIndex:(NSInteger)index;
 
 - (void)reloadData;
 
-- (void)selectItemAtIndex:(NSInteger)index animated:(BOOL)animated;
+/**
+ 选中index，配合pageController滚动使用
+
+ @param index 需要选中的index
+ */
+- (void)selectItemAtIndex:(NSInteger)index;
+
+/**
+ 刷新pageBar显示
+
+ @param progress   进度（0-maxIndex）
+ @param isDragging 是否是拖动
+ @param animated   是否有动画（建议要有，不然会比较生硬）
+ */
 - (void)refreshProgress:(float)progress isDragging:(BOOL)isDragging animated:(BOOL)animated;
 
 @end

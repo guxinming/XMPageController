@@ -24,11 +24,6 @@
 @property (strong, nonatomic) UIColor *color;
 @property (assign, nonatomic) CGFloat progress;
 
-/**
- bar切换item的时候是否有动画
- */
-@property (assign, nonatomic) BOOL progressSwitchAnimation;
-
-- (void)moveToPostion:(NSInteger)pos;
+- (void)moveToPostion:(NSInteger)pos animated:(BOOL)animated;
 
 @end

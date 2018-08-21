@@ -77,9 +77,10 @@ typedef NS_ENUM(NSInteger, XMPagerBarStyle) {
  进度条颜色
  */
 @property (strong, nonatomic) UIColor *progressColor;
+
 /**
- bar切换item的时候是否有动画，默认是有动画的
+ progress移动速度,pageBar - (void)refreshProgress:(float)progress isDragging:(BOOL)isDragging animated:(BOOL)animated animated为YES时有效，否则无效(越大越慢，越小越快)
  */
-@property (assign, nonatomic) BOOL progressSwitchAnimation;
+@property (assign, nonatomic) CGFloat progressSpeed;
 
 @end

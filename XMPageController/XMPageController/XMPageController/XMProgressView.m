@@ -29,16 +29,21 @@
     return _speedFactor;
 }
 
-- (void)moveToPostion:(NSInteger)pos {
-    _gap = fabs(self.progress - pos);
-    _sign = self.progress > pos ? -1 : 1;
-    _step = _gap / self.speedFactor;
-    if (_link) {
-        [_link invalidate];
+- (void)moveToPostion:(NSInteger)pos animated:(BOOL)animated {
+    
+    if (animated) {
+        _gap = fabs(self.progress - pos);
+        _sign = self.progress > pos ? -1 : 1;
+        _step = _gap / self.speedFactor;
+        if (_link) {
+            [_link invalidate];
+        }
+        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(progressChanged)];
+        [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+        _link = link;
+    } else {
+        self.progress = pos;
     }
-    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(progressChanged)];
-    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-    _link = link;
 }
 
 - (void)progressChanged {
