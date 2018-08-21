@@ -107,7 +107,7 @@
 
 #pragma mark - XMPageBarDataSource
 - (void)pageBar:(XMPageBar *)pageBar didSelectItemAtIndex:(NSInteger)index {
-    [self.pageController scrollToIndex:index animated:YES];
+    [self.pageController scrollToIndex:index animated:NO];
 }
 
 - (void)pageController:(XMPageViewController *)pageController transitionFrom:(NSInteger)fromIndex toIndex:(NSInteger)toIndex animated:(BOOL)animated {
