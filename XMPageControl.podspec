@@ -14,9 +14,10 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.homepage     = "https://github.com/guxinming/XMPageController.git"
   s.author        = { "liliangming" => "liliangming@58ganji.com" }
-  s.platform     = :ios, "8.0"
+  s.ios.deployment_target = '6.0'
   s.source       = { :git => "https://github.com/guxinming/XMPageController.git", :tag => s.version }
   s.source_files  = "XMPageController/XMPageController/*.{h,m}"
-  s.frameworks    = "Foundation", "UIKit", "CoreGraphics"
+  s.frameworks    = 'Foundation', 'CoreGraphics', 'UIKit'
+  s.requires_arc = true
 
 end

@@ -68,7 +68,6 @@
         pageVC.progressW = 10;
         [self.navigationController pushViewController:pageVC animated:YES];
     }
-    
 }
 
 
