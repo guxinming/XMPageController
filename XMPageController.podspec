@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "XMPageControl"
+  s.name         = "XMPageController"
   s.version      = "1.0.2"
   s.summary      = "this a page controller"
   s.license      = "MIT"
