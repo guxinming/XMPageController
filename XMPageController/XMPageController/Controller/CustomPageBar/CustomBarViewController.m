@@ -34,7 +34,7 @@
     pageBar.layout.selecFont = [UIFont systemFontOfSize:18];
     pageBar.layout.normalColor = [UIColor grayColor];
     pageBar.layout.selectColor = [UIColor blueColor];
-    pageBar.layout.barStyle = XMPageBarFillFlowProgress;
+    pageBar.layout.barStyle = XMPageBarTriangleProgress;
     pageBar.layout.progressColor = [UIColor blueColor];
     pageBar.layout.progressW = 100;
     pageBar.layout.progressH = 5;
