@@ -21,7 +21,6 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.progressH = 3;
         self.oringinX = 0;
     }
     return self;
@@ -77,12 +76,10 @@
 }
 
 - (void)setProgressH:(CGFloat)progressH {
-    if (progressH >= 0.5 && progressH <= 5) {
+    if (progressH >= 0.5) {
         _progressH = progressH;
-    } else if (progressH < 0.5) {
-        _progressH = 0.5;
     } else {
-        _progressH = 5;
+        _progressH = 0.5;
     }
 }
 
@@ -109,7 +106,12 @@
     UICollectionViewLayoutAttributes *attrs = [[super layoutAttributesForItemAtIndexPath:indexPath] copy];
     CGSize itemSize = CGSizeMake([self.dataSource widthForItemAtIndex:indexPath.row], self.collectionView.frame.size.height);
     
-    attrs.frame = CGRectMake(self.cellPadding + self.oringinX, 0, itemSize.width, self.barStyle == XMPagerBarStyleProgress ? itemSize.height - self.progressH : itemSize.height);
+    if (self.barStyle == XMPageBarLineProgress || self.barStyle == XMPageBarTriangleProgress) {
+        attrs.frame = CGRectMake(self.cellPadding + self.oringinX, 0, itemSize.width,  itemSize.height - self.progressH);
+    } else {
+        attrs.frame = CGRectMake(self.cellPadding + self.oringinX, 0, itemSize.width,  itemSize.height);
+    }
+    
     self.oringinX += itemSize.width + self.cellSpace;
     return attrs;
 }

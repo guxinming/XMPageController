@@ -8,7 +8,7 @@
 
 #import "PageViewController.h"
 #import "XMPageViewController.h"
-#import "XMPageBar.h"
+
 #import "Test1ViewController.h"
 #import "Test2ViewController.h"
 #import "Test3ViewController.h"
@@ -36,10 +36,11 @@
     pageBar.layout.normalFont = [UIFont systemFontOfSize:16];
     pageBar.layout.selecFont = [UIFont systemFontOfSize:18];
     pageBar.layout.normalColor = [UIColor grayColor];
-    pageBar.layout.selectColor = [UIColor blueColor];
-    pageBar.layout.barStyle = XMPagerBarStyleProgress;
-    pageBar.layout.progressColor = [UIColor blueColor];
+    pageBar.layout.selectColor = [UIColor purpleColor];
+    pageBar.layout.barStyle = self.style;
+    pageBar.layout.progressColor = [UIColor orangeColor];
     pageBar.layout.progressW = self.progressW;
+    pageBar.layout.progressH = self.progressH;
     [self.view addSubview:pageBar];
     self.pageBar = pageBar;
     

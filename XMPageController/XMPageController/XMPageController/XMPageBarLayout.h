@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "XMPageCotrol.h"
-
 typedef NS_ENUM(NSInteger, XMPagerBarStyle) {
-    XMPagerBarStyleNone,
-    XMPagerBarStyleProgress,
+    XMPageBarStyleNone,                  //默认样式
+    XMPageBarLineProgress,               //底部为一个view，根据progressWidth字段决定是否有流动效果
+    XMPageBarTriangleProgress,           //底部为三角符号
+    XMPageBarStrokeFlowProgress,         //边框流动样式
+    XMPageBarFillFlowProgress,           //填充流动样式
 };
 
 @protocol XMPageBarLayoutDataSource <NSObject>
@@ -47,30 +48,29 @@ typedef NS_ENUM(NSInteger, XMPagerBarStyle) {
 
 #pragma mark - 这四个属性在自定义cell的时候无效
 /**
- 正常的title字体
+ 正常的title字体 默认16
  */
 @property (strong, nonatomic) UIFont *normalFont;
 /**
- 选中的title字体
+ 选中的title字体 默认16
  */
 @property (strong, nonatomic) UIFont *selecFont;
 /**
- 正常title颜色
+ 正常title颜色 默认 [UIColor blackColor]
  */
 @property (strong, nonatomic) UIColor *normalColor;
 /**
- 选中title颜色
+ 选中title颜色 默认 [UIColor blackColor]
  */
 @property (strong, nonatomic) UIColor *selectColor;
 
 #pragma mark - progressView
-@property (assign, nonatomic) XMProgressStyle style;
 /**
  进度条的宽度，如果不设置默认为barItem的宽度，且不能大于baritem的宽度
  */
 @property (assign, nonatomic) CGFloat progressW;
 /**
- 进度条的高度，默认为3，值应该在0.5-5之间
+ 进度条的高度，默认为3，值应该大于0.5
  */
 @property (assign, nonatomic) CGFloat progressH;
 /**

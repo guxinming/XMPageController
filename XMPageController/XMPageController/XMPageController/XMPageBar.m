@@ -40,25 +40,51 @@
 - (XMProgressView *)progressView {
     if (!_progressView) {
         _progressView = [[XMProgressView alloc] init];
-        _progressView.backgroundColor = [UIColor whiteColor];
-        _progressView.style = self.layout.style;
+        _progressView.backgroundColor = [UIColor clearColor];
+        _progressView.userInteractionEnabled = NO;
+        if (self.layout.barStyle == XMPageBarLineProgress) {
+            _progressView.style = XMLineStyle;
+        } else if (self.layout.barStyle == XMPageBarTriangleProgress) {
+            _progressView.style = XMTriangleStyle;
+        } else if (self.layout.barStyle == XMPageBarFillFlowProgress) {
+            _progressView.style = XMFillFlowStyle;
+        } else if (self.layout.barStyle == XMPageBarStrokeFlowProgress) {
+            _progressView.style = XMStrokeFlowStyle;
+        }
         _progressView.color = self.layout.progressColor;
         _progressView.speedFactor = self.layout.progressSpeed;
+        _progressView.selectFont = self.layout.selecFont;
+        _progressView.selectColor = self.layout.selectColor;
+        _progressView.normalFont = self.layout.normalFont;
+        _progressView.normalColor = self.layout.normalColor;
         NSMutableArray *progressFrames = [NSMutableArray array];
+        NSMutableArray *textArray = [NSMutableArray array];
         CGFloat width = 0;
         for (int i = 0; i < [self.collectView numberOfItemsInSection:0]; i++) {
         
             CGFloat progressW = (self.layout.progressW == 0 || self.layout.progressW > [self widthForItemAtIndex:i]) ? [self widthForItemAtIndex:i] : self.layout.progressW;
-            
-            CGRect itemFrame = CGRectMake(width + self.layout.cellPadding + i * self.layout.cellSpace, 0, [self widthForItemAtIndex:i], self.frame.size.height - self.layout.progressH);
-            CGFloat x = itemFrame.origin.x + (itemFrame.size.width - progressW) / 2;
-            CGRect progressFrame = CGRectMake(x, self.frame.size.height - self.layout.progressH, progressW, self.layout.progressH);
-            [progressFrames addObject:[NSValue valueWithCGRect:progressFrame]];
+            if (_progressView.style == XMLineStyle || _progressView.style == XMTriangleStyle) {
+                CGRect itemFrame = CGRectMake(width + self.layout.cellPadding + i * self.layout.cellSpace, 0, [self widthForItemAtIndex:i], self.frame.size.height - self.layout.progressH);
+                CGFloat x = itemFrame.origin.x + (itemFrame.size.width - progressW) / 2;
+                CGRect progressFrame = CGRectMake(x, self.frame.size.height - self.layout.progressH, progressW, self.layout.progressH);
+                [progressFrames addObject:[NSValue valueWithCGRect:progressFrame]];
+            } else {
+                if (!self.dataSource && ![self.dataSource respondsToSelector:@selector(titleForCellAtIndex:)]) {
+                    NSAssert(NO, @"you need implementation method -(void)titleForCellAtIndex:");
+                }
+                
+                [textArray addObject:[self.dataSource titleForCellAtIndex:i]];
+                
+                CGRect itemFrame = CGRectMake(width + self.layout.cellPadding + i * self.layout.cellSpace, 0, [self widthForItemAtIndex:i], self.frame.size.height);
+                [progressFrames addObject:[NSValue valueWithCGRect:itemFrame]];
+            }
             width += [self widthForItemAtIndex:i];
+            
         }
         
         _progressView.progressFrames = progressFrames;
-        _progressView.frame = CGRectMake(0, self.frame.size.height - self.layout.progressH, width, self.layout.progressH);
+        _progressView.textArray = textArray;
+        _progressView.frame = CGRectMake(0, 0, width, self.frame.size.height);
     }
     return _progressView;
 }
@@ -98,9 +124,11 @@
     } else {
         XMPageBarCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"xmPageBarCell" forIndexPath:indexPath];
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(titleForCellAtIndex:)]) {
-            cell.titleLabel.text = [self.dataSource titleForCellAtIndex:indexPath.row];
+            if (self.layout.barStyle != XMPageBarFillFlowProgress) {
+               cell.titleLabel.text = [self.dataSource titleForCellAtIndex:indexPath.row];
+            }
         } else {
-            NSLog(@"you need implementation method -(void)titleForCellAtIndex:");
+            NSAssert(NO, @"you need implementation method -(void)titleForCellAtIndex:");
         }
         if (indexPath.row == self.curIndex) {
             cell.titleLabel.font = self.layout.selecFont;
@@ -173,7 +201,12 @@
     if (![self.subviews containsObject:self.collectView]) {
         [self addSubview:self.collectView];
         
-        if (![self.collectView.subviews containsObject:self.progressView] && self.layout.barStyle == XMPagerBarStyleProgress) {
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(pageBar:cellForItemAtIndex:)] && (self.layout.barStyle == XMPageBarStrokeFlowProgress || self.layout.barStyle == XMPageBarFillFlowProgress)) {
+            self.layout.barStyle = XMPageBarStyleNone;
+        }
+        
+        if (![self.collectView.subviews containsObject:self.progressView] && self.layout.barStyle != XMPageBarStyleNone) {
+        
             [self.collectView addSubview:self.progressView];
             self.progressView.progress = self.curIndex;
         }
@@ -221,6 +254,7 @@
     
     if (self.dataSource) {
 
+        self.progressView.curIndex = self.curIndex;
         NSInteger nextIndex = progress > self.curIndex ? self.curIndex + 1 : self.curIndex - 1;
         if (nextIndex > [self.collectView numberOfItemsInSection:0] - 1) {
             nextIndex = [self.collectView numberOfItemsInSection:0] - 1;
@@ -234,6 +268,7 @@
                 [self.delegate pageBar:self transitFromIndex:self.curIndex toIndex:nextIndex progress:fabs(progress - self.curIndex)];
             }
         } else {
+            
             if (nextIndex != self.curIndex) {
                 XMPageBarCell *fromCell = (XMPageBarCell *)[self.collectView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.curIndex inSection:0]];
                 XMPageBarCell *tocell = (XMPageBarCell *)[self.collectView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:nextIndex inSection:0]];

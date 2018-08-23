@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.sourceArray = @[@"DefaultBarStyle", @"CustomBar", @"progressNauty"];
+    self.sourceArray = @[@"DefaultBarStyle", @"CustomBar", @"progressNauty", @"XMPageBarFillFlowProgress", @"XMPageBarStrokeFlowProgress"];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - STATUS_H - TABBAR_H - 44) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -58,7 +58,9 @@
 
     if (indexPath.row == 0) {
         PageViewController *pageVC = [[PageViewController alloc] init];
+        pageVC.style = XMPageBarLineProgress;
         pageVC.progressW = 100;
+        pageVC.progressH = 3;
         [self.navigationController pushViewController:pageVC animated:YES];
     } else if (indexPath.row == 1) {
         CustomBarViewController *customBarVC = [[CustomBarViewController alloc] init];
@@ -66,6 +68,20 @@
     } else if (indexPath.row == 2) {
         PageViewController *pageVC = [[PageViewController alloc] init];
         pageVC.progressW = 10;
+        pageVC.progressH = 3;
+        pageVC.style = XMPageBarLineProgress;
+        [self.navigationController pushViewController:pageVC animated:YES];
+    } else if (indexPath.row == 3) {
+        PageViewController *pageVC = [[PageViewController alloc] init];
+        pageVC.progressW = 40;
+        pageVC.progressH = 30;
+        pageVC.style = XMPageBarFillFlowProgress;
+        [self.navigationController pushViewController:pageVC animated:YES];
+    } else if (indexPath.row == 4) {
+        PageViewController *pageVC = [[PageViewController alloc] init];
+        pageVC.progressW = 40;
+        pageVC.progressH = 30;
+        pageVC.style = XMPageBarStrokeFlowProgress;
         [self.navigationController pushViewController:pageVC animated:YES];
     }
 }

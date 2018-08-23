@@ -92,7 +92,6 @@
 		0097C9B1212AB8D000A60F64 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		0097C9B4212AB9FF00A60F64 /* CustomBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBarViewController.h; sourceTree = "<group>"; };
 		0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBarViewController.m; sourceTree = "<group>"; };
-		0097C9B7212AC4D100A60F64 /* XMPageCotrol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPageCotrol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +188,6 @@
 				0038F2D521213278005388CB /* XMPageBarCell.m */,
 				001E74D92123C78B00F06DEA /* XMProgressView.h */,
 				001E74DA2123C78B00F06DEA /* XMProgressView.m */,
-				0097C9B7212AC4D100A60F64 /* XMPageCotrol.h */,
 			);
 			path = XMPageController;
 			sourceTree = "<group>";

@@ -34,12 +34,11 @@
     pageBar.layout.selecFont = [UIFont systemFontOfSize:18];
     pageBar.layout.normalColor = [UIColor grayColor];
     pageBar.layout.selectColor = [UIColor blueColor];
-    pageBar.layout.barStyle = XMPagerBarStyleProgress;
+    pageBar.layout.barStyle = XMPageBarFillFlowProgress;
     pageBar.layout.progressColor = [UIColor blueColor];
     pageBar.layout.progressW = 100;
     pageBar.layout.progressH = 5;
     pageBar.layout.progressSpeed = 10;
-    pageBar.layout.style = XMProgressTriangleStyle;
     [pageBar registerNib:[UINib nibWithNibName:@"CustomCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"pageBarCell"];
     [self.view addSubview:pageBar];
     self.pageBar = pageBar;
