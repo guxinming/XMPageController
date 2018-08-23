@@ -15,3 +15,7 @@ pod 'XMPageController',可通过pod集成
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fuhcekqh4ng30bi0es1kx.gif)
 ## 3.流动的样式
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fuhcgpwrzyg30bi0es4qp.gif)
+## 4.背景流动的样式
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fujx16v7c9g30bi0es7hr.gif)
+## 5.背景边框的样式
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fujx29y58ug30bi0eskcr.gif)
