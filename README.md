@@ -1,5 +1,5 @@
 # XMPageController
-这是一个页面管理器，类似于爱奇艺，腾讯视频等app的页面控制器
+这是一个页面管理器，类似于爱奇艺，腾讯视频，简书等app的页面控制器
 
 pod 'XMPageController'
 
@@ -10,13 +10,13 @@ pod 'XMPageController'
  
  XMPageBar是一个UICollectionView和progressView的结合。XMPageViewController就是一个页面控制器，主体是UIScrollview。两者分离，通过提供的方法进行交互关联。
 
-## 1.默认bar的样式
+## 1.默认bar的样式（progressline），linewidth等于cell的宽度
 ![1.defaultBar样式](https://ws3.sinaimg.cn/large/006tNbRwly1fuhbuv4arfg30bi0esnpd.gif)
-## 2.自定义bar和progressView三角形的样式
+## 2.自定义bar和progressView三角形的样式，这个样式三角形的高度为progressH
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fuhcekqh4ng30bi0es1kx.gif)
 ## 3.流动的样式
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fuhcgpwrzyg30bi0es4qp.gif)
-## 4.背景流动的样式
+## 4.背景流动的样式，这个样式不支持自定义cell
 ![](https://ws2.sinaimg.cn/large/006tNbRwly1fujx16v7c9g30bi0es7hr.gif)
-## 5.背景边框的样式
+## 5.背景边框的样式，这个样式边框的高度是progressH
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fujx29y58ug30bi0eskcr.gif)
