@@ -9,14 +9,14 @@
 Pod::Spec.new do |s|
 
   s.name         = "XMPageController"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "this a page controller"
   s.license      = "MIT"
   s.homepage     = "https://github.com/guxinming/XMPageController.git"
   s.author        = { "liliangming" => "liliangming@58ganji.com" }
   s.ios.deployment_target = '6.0'
   s.source       = { :git => "https://github.com/guxinming/XMPageController.git", :tag => s.version }
-  s.source_files  = "XMPageController/XMPageController/XMPageController/*.{h,m}"
+  s.source_files  = "XMPageController/*.{h,m}"
   s.frameworks    = 'Foundation', 'CoreGraphics', 'UIKit'
   s.requires_arc = true
 
