@@ -13,8 +13,8 @@ typedef NS_ENUM(NSInteger, XMPagerBarStyle) {
     XMPageBarStyleNone,                  //默认样式
     XMPageBarLineProgress,               //底部为一个view，根据progressWidth字段决定是否有流动效果
     XMPageBarTriangleProgress,           //底部为三角符号
-    XMPageBarStrokeFlowProgress,         //边框流动样式
-    XMPageBarFillFlowProgress,           //填充流动样式
+    XMPageBarStrokeFlowProgress,         //边框流动样式(需要给出progressH，不设置默认是cell的高度)
+    XMPageBarFillFlowProgress,           //填充流动样式(自定义cell不支持这种样式)
 };
 
 @protocol XMPageBarLayoutDataSource <NSObject>

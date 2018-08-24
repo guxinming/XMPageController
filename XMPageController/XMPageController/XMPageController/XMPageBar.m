@@ -68,7 +68,7 @@
                 CGFloat x = itemFrame.origin.x + (itemFrame.size.width - progressW) / 2;
                 CGRect progressFrame = CGRectMake(x, self.frame.size.height - self.layout.progressH, progressW, self.layout.progressH);
                 [progressFrames addObject:[NSValue valueWithCGRect:progressFrame]];
-            } else {
+            } else if (_progressView.style == XMFillFlowStyle) {
                 if (!self.dataSource && ![self.dataSource respondsToSelector:@selector(titleForCellAtIndex:)]) {
                     NSAssert(NO, @"you need implementation method -(void)titleForCellAtIndex:");
                 }
@@ -76,6 +76,9 @@
                 [textArray addObject:[self.dataSource titleForCellAtIndex:i]];
                 
                 CGRect itemFrame = CGRectMake(width + self.layout.cellPadding + i * self.layout.cellSpace, 0, [self widthForItemAtIndex:i], self.frame.size.height);
+                [progressFrames addObject:[NSValue valueWithCGRect:itemFrame]];
+            } else if (_progressView.style == XMStrokeFlowStyle) {
+                CGRect itemFrame = CGRectMake(width + self.layout.cellPadding + i * self.layout.cellSpace, 0, [self widthForItemAtIndex:i], self.layout.progressH == 0 ? self.frame.size.height : self.layout.progressH);
                 [progressFrames addObject:[NSValue valueWithCGRect:itemFrame]];
             }
             width += [self widthForItemAtIndex:i];
@@ -103,6 +106,10 @@
         _identifierArray = [[NSMutableArray alloc] init];
     }
     return _identifierArray;
+}
+
+- (void)setBounces:(BOOL)bounces {
+    self.collectView.bounces = bounces;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -201,7 +208,7 @@
     if (![self.subviews containsObject:self.collectView]) {
         [self addSubview:self.collectView];
         
-        if (self.dataSource && [self.dataSource respondsToSelector:@selector(pageBar:cellForItemAtIndex:)] && (self.layout.barStyle == XMPageBarStrokeFlowProgress || self.layout.barStyle == XMPageBarFillFlowProgress)) {
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(pageBar:cellForItemAtIndex:)] && self.layout.barStyle == XMPageBarFillFlowProgress) {
             self.layout.barStyle = XMPageBarStyleNone;
         }
         

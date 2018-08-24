@@ -28,6 +28,7 @@
     
     XMPageBar *pageBar = [[XMPageBar alloc] init];
     pageBar.frame = CGRectMake(0, 70, self.view.frame.size.width, 50);
+    pageBar.bounces = NO;
     pageBar.delegate = self;
     pageBar.dataSource = self;
     pageBar.layout.normalFont = [UIFont systemFontOfSize:16];

@@ -116,14 +116,14 @@
     }
     
     if (self.style == XMFillFlowStyle) {
-        
         [self drawFillFlow:ctx startX:startX width:width];
         return;
 
     }
     
     if (self.style == XMStrokeFlowStyle) {
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(startX, 10, width, height - 20) cornerRadius:height / 2];
+        
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(startX, (self.frame.size.height - height) / 2, width, height) cornerRadius:height / 2];
         CGContextAddPath(ctx, path.CGPath);
         CGContextSetFillColorWithColor(ctx, self.color.CGColor);
         CGContextSetStrokeColorWithColor(ctx, self.color.CGColor);
@@ -177,8 +177,6 @@
     CGSize nextSize = [nextText boundingRectWithSize:CGSizeMake(nextRect.size.width, 14) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : self.normalFont} context:nil].size;
     CGFloat height = curSize.height >= nextSize.height ? curSize.height : nextSize.height;
     height = height > self.frame.size.height ? self.frame.size.height : height;
-    
-    [currentText drawInRect:CGRectMake(currentRect.origin.x + (currentRect.size.width - curSize.width) / 2, (currentRect.size.height - curSize.height) / 2, curSize.width, curSize.height) withAttributes:@{NSFontAttributeName:self.normalFont, NSForegroundColorAttributeName:self.normalColor}];
     
     CGMutablePathRef circlePath = CGPathCreateMutable();
     CGRect rect = CGRectMake(startX, (self.frame.size.height - height - 10) / 2, width, curSize.height + 10);

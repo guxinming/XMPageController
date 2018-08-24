@@ -95,6 +95,10 @@
  当前选中的索引值
  */
 @property (assign, nonatomic) NSInteger curIndex;
+/**
+ 弹性 默认为YES
+ */
+@property (assign, nonatomic) BOOL bounces;
 
 #pragma mark - 这里是collectionView的方法包装
 /**
