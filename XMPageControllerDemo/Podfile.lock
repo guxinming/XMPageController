@@ -1,0 +1,16 @@
+PODS:
+  - XMPageController (1.0.4)
+
+DEPENDENCIES:
+  - XMPageController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - XMPageController
+
+SPEC CHECKSUMS:
+  XMPageController: 9ef8e9fb6aec165bdaa3c533a0f0d2961afe07f0
+
+PODFILE CHECKSUM: 98276c5813d28d9fc86b3bbf0d93cdeb4f8f2ebf
+
+COCOAPODS: 1.5.3

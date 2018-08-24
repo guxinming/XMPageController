@@ -24,6 +24,7 @@
 		0097C9B2212AB8D000A60F64 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097C9B0212AB8D000A60F64 /* CustomCollectionViewCell.m */; };
 		0097C9B3212AB8D000A60F64 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0097C9B1212AB8D000A60F64 /* CustomCollectionViewCell.xib */; };
 		0097C9B6212AB9FF00A60F64 /* CustomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */; };
+		F7D6FB74200F985E42750C89 /* Pods_XMPageController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1518B58F1B5D33AF0C35E0 /* Pods_XMPageController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,9 @@
 		0097C9B1212AB8D000A60F64 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		0097C9B4212AB9FF00A60F64 /* CustomBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBarViewController.h; sourceTree = "<group>"; };
 		0097C9B5212AB9FF00A60F64 /* CustomBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBarViewController.m; sourceTree = "<group>"; };
+		488C6D811FBE7B4EE25F8354 /* Pods-XMPageController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMPageController.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMPageController/Pods-XMPageController.release.xcconfig"; sourceTree = "<group>"; };
+		5D1518B58F1B5D33AF0C35E0 /* Pods_XMPageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMPageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F803960A35A31E430078A4B /* Pods-XMPageController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMPageController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMPageController/Pods-XMPageController.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D6FB74200F985E42750C89 /* Pods_XMPageController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +116,8 @@
 				00007AF121181FD8007DC729 /* XMPageControllerTests */,
 				00007AFC21181FD8007DC729 /* XMPageControllerUITests */,
 				00007AD721181FD7007DC729 /* Products */,
+				3DC70C23AAA7C2423C68830B /* Pods */,
+				4C0B2F0C76333231A86D91F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +206,23 @@
 			path = DefaultPageBar;
 			sourceTree = "<group>";
 		};
+		3DC70C23AAA7C2423C68830B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F803960A35A31E430078A4B /* Pods-XMPageController.debug.xcconfig */,
+				488C6D811FBE7B4EE25F8354 /* Pods-XMPageController.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C0B2F0C76333231A86D91F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D1518B58F1B5D33AF0C35E0 /* Pods_XMPageController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00007B0221181FD8007DC729 /* Build configuration list for PBXNativeTarget "XMPageController" */;
 			buildPhases = (
+				715ACF9ED477C1B7BB69B87C /* [CP] Check Pods Manifest.lock */,
 				00007AD221181FD7007DC729 /* Sources */,
 				00007AD321181FD7007DC729 /* Frameworks */,
 				00007AD421181FD7007DC729 /* Resources */,
+				3BB2169FA0412FA9BAD0EAF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +350,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BB2169FA0412FA9BAD0EAF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XMPageController/Pods-XMPageController-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/XMPageController/XMPageController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMPageController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XMPageController/Pods-XMPageController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		715ACF9ED477C1B7BB69B87C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XMPageController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00007AD221181FD7007DC729 /* Sources */ = {
@@ -507,14 +572,12 @@
 		};
 		00007B0321181FD8007DC729 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F803960A35A31E430078A4B /* Pods-XMPageController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XMPageController/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bj58.jxedt.XMPageController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,14 +586,12 @@
 		};
 		00007B0421181FD8007DC729 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 488C6D811FBE7B4EE25F8354 /* Pods-XMPageController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XMPageController/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bj58.jxedt.XMPageController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -543,11 +604,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XMPageControllerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bj58.jxedt.XMPageControllerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -561,11 +618,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XMPageControllerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bj58.jxedt.XMPageControllerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -578,11 +631,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XMPageControllerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bj58.jxedt.XMPageControllerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -595,11 +644,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XMPageControllerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bj58.jxedt.XMPageControllerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

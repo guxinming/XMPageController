@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CDCFDA895D950A5C8CCBC95126ADEB2 /* XMPageController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E36FCFACBDD008FE9C4FC27E08B835 /* XMPageController-dummy.m */; };
+		372FB5DCB7C4D38600FA8A959F293C20 /* XMPageController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D20E977F10972AF43EED017961E9F451 /* XMPageController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B062F5EB22FF5808914D36C4AF281E6 /* Pods-XMPageController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE041B033E21BBC88AB33E2809E41 /* Pods-XMPageController-dummy.m */; };
+		4B72341D9EB77E74E2A04CB667174BA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C06B1B209CA23EC16EBF65CF890313 /* CoreGraphics.framework */; };
+		4EEB2865E3E4DE9D8790D6CC8E33CBDF /* XMPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E5838DDB81D23C8AE082A93D2D768 /* XMPageViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		56BAF33A15389001AD4681AE20D6B4B7 /* Pods-XMPageController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13534B3DEFBB004DC18F84F072A323DC /* Pods-XMPageController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5885CD894BCB63580CC120BFCA1DF171 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE59B0D97841C2542CA3D20540685C26 /* Foundation.framework */; };
+		5D21493DB888D60FB08635C2C4690541 /* XMPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A8647A8250C396476D42117DC56D25A3 /* XMPageViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD6ACE5FB86700A4E3294B2A932EBAD /* XMPageBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 821F4B4D3B0BC53718FB5A8525D1991E /* XMPageBarCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9BA9342FECCB49105CA52211A3FD51FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE59B0D97841C2542CA3D20540685C26 /* Foundation.framework */; };
+		A4C5DF6445379AE716C12EDAD719DF2D /* XMPageBarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C212697FE696E439BB319DC704548 /* XMPageBarLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A5548B542B6D8BA6578AC6E1C848353C /* XMProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1513CF98DD6ECB68974C5F9255037034 /* XMProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E60501ED2DC460E12BE756B5B6ED46 /* XMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA08915F08C09FF3888AC0BCD24C2C /* XMProgressView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BBDED380B093929AF0D3ACFF27BAA6A6 /* XMPageBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 501B3F80E432B9FA68D214B34CA643E9 /* XMPageBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1BE22099DF083B5698854C5A122C691 /* XMPageBarLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 03EE6A8D45C472C1C07E0E6C040DD08A /* XMPageBarLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E447F9A390D5CA5C4C35E11B0735DEAE /* XMPageBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2BF0A7D1D53BB927D1CB652DD2E45C /* XMPageBar.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EC741101655F5107349963E915182A32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5224A726D9EABB2D5F18E4597390EF3 /* UIKit.framework */; };
+		EF39309CBBB2DC1787F6E63B907181D8 /* XMPageBarCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EF8CC7F8E4C7B8E9C1C81C29566B25F /* XMPageBarCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13BE386D4A1FD555C85EF88677515163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A8D82DE8159B8878DFD1A640BAC95BF;
+			remoteInfo = XMPageController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03EE6A8D45C472C1C07E0E6C040DD08A /* XMPageBarLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMPageBarLayout.h; path = XMPageController/XMPageBarLayout.h; sourceTree = "<group>"; };
+		11CFE95BEF7A07976095CFEC4DE89916 /* Pods-XMPageController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XMPageController.debug.xcconfig"; sourceTree = "<group>"; };
+		13534B3DEFBB004DC18F84F072A323DC /* Pods-XMPageController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XMPageController-umbrella.h"; sourceTree = "<group>"; };
+		1513CF98DD6ECB68974C5F9255037034 /* XMProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMProgressView.h; path = XMPageController/XMProgressView.h; sourceTree = "<group>"; };
+		2A2501C5ACB855D823D7D87EF464D59C /* Pods-XMPageController-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XMPageController-resources.sh"; sourceTree = "<group>"; };
+		2C0EE041B033E21BBC88AB33E2809E41 /* Pods-XMPageController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XMPageController-dummy.m"; sourceTree = "<group>"; };
+		2F2BF0A7D1D53BB927D1CB652DD2E45C /* XMPageBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XMPageBar.m; path = XMPageController/XMPageBar.m; sourceTree = "<group>"; };
+		3E36C75538214BB010BE5D287F5322BA /* XMPageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XMPageController.framework; path = XMPageController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DA2F75CE4E4408E42A9911D337BA618 /* Pods-XMPageController-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XMPageController-frameworks.sh"; sourceTree = "<group>"; };
+		501B3F80E432B9FA68D214B34CA643E9 /* XMPageBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMPageBar.h; path = XMPageController/XMPageBar.h; sourceTree = "<group>"; };
+		54DADB1241CBC780797B5923E62C4483 /* Pods_XMPageController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XMPageController.framework; path = "Pods-XMPageController.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57156255B193A55F41467F3D1B6750B9 /* XMPageController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XMPageController-prefix.pch"; sourceTree = "<group>"; };
+		5E3E5838DDB81D23C8AE082A93D2D768 /* XMPageViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XMPageViewController.m; path = XMPageController/XMPageViewController.m; sourceTree = "<group>"; };
+		62F910E0F8172E86A1413E1D9A39429E /* Pods-XMPageController-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XMPageController-acknowledgements.plist"; sourceTree = "<group>"; };
+		821F4B4D3B0BC53718FB5A8525D1991E /* XMPageBarCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XMPageBarCell.m; path = XMPageController/XMPageBarCell.m; sourceTree = "<group>"; };
+		8B7C212697FE696E439BB319DC704548 /* XMPageBarLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XMPageBarLayout.m; path = XMPageController/XMPageBarLayout.m; sourceTree = "<group>"; };
+		8EF8CC7F8E4C7B8E9C1C81C29566B25F /* XMPageBarCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMPageBarCell.h; path = XMPageController/XMPageBarCell.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		986B31E1CFFFE2D6D1E365473910EC76 /* XMPageController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XMPageController.modulemap; sourceTree = "<group>"; };
+		99C06B1B209CA23EC16EBF65CF890313 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		9AEA08915F08C09FF3888AC0BCD24C2C /* XMProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XMProgressView.m; path = XMPageController/XMProgressView.m; sourceTree = "<group>"; };
+		A5224A726D9EABB2D5F18E4597390EF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A8647A8250C396476D42117DC56D25A3 /* XMPageViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMPageViewController.h; path = XMPageController/XMPageViewController.h; sourceTree = "<group>"; };
+		B5E36FCFACBDD008FE9C4FC27E08B835 /* XMPageController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XMPageController-dummy.m"; sourceTree = "<group>"; };
+		BAE1500A060CD68E7D43B9686700F0A6 /* Pods-XMPageController-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XMPageController-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C39D20CB87F5B18AFF843D58FCAD3DEE /* XMPageController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XMPageController.xcconfig; sourceTree = "<group>"; };
+		C52FAE01C8189FE61F414764B7C5D5B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE59B0D97841C2542CA3D20540685C26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D20E977F10972AF43EED017961E9F451 /* XMPageController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XMPageController-umbrella.h"; sourceTree = "<group>"; };
+		DDE1EF46C38847963255A82074A0A699 /* Pods-XMPageController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XMPageController.modulemap"; sourceTree = "<group>"; };
+		DE31A1CF0C301CCDA635C92D72539447 /* Pods-XMPageController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XMPageController.release.xcconfig"; sourceTree = "<group>"; };
+		FB63D8228A2A4B0F835238FC9F9267D7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C27C7D9E15708903D7768D68E4C8AAE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5885CD894BCB63580CC120BFCA1DF171 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D931BA9742B198AD63ECD4676DF7EA4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B72341D9EB77E74E2A04CB667174BA3 /* CoreGraphics.framework in Frameworks */,
+				9BA9342FECCB49105CA52211A3FD51FD /* Foundation.framework in Frameworks */,
+				EC741101655F5107349963E915182A32 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93FD095B5FC2A2BCC81B8E3CFC167E67 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49528106F610C5A91EAEED39A95C418B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54DADB1241CBC780797B5923E62C4483 /* Pods_XMPageController.framework */,
+				3E36C75538214BB010BE5D287F5322BA /* XMPageController.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68FB4E228A09234F9E7ED364491E889B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C52FAE01C8189FE61F414764B7C5D5B3 /* Info.plist */,
+				986B31E1CFFFE2D6D1E365473910EC76 /* XMPageController.modulemap */,
+				C39D20CB87F5B18AFF843D58FCAD3DEE /* XMPageController.xcconfig */,
+				B5E36FCFACBDD008FE9C4FC27E08B835 /* XMPageController-dummy.m */,
+				57156255B193A55F41467F3D1B6750B9 /* XMPageController-prefix.pch */,
+				D20E977F10972AF43EED017961E9F451 /* XMPageController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/XMPageController";
+			sourceTree = "<group>";
+		};
+		70AAB301407D9C8D94834825D63248F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EAA19AA1A64AE69A30B2ECE20AA39BA /* XMPageController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				70AAB301407D9C8D94834825D63248F6 /* Pods */,
+				49528106F610C5A91EAEED39A95C418B /* Products */,
+				93C8987C450D4C02A696ED59E4F0D221 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8EAA19AA1A64AE69A30B2ECE20AA39BA /* XMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				501B3F80E432B9FA68D214B34CA643E9 /* XMPageBar.h */,
+				2F2BF0A7D1D53BB927D1CB652DD2E45C /* XMPageBar.m */,
+				8EF8CC7F8E4C7B8E9C1C81C29566B25F /* XMPageBarCell.h */,
+				821F4B4D3B0BC53718FB5A8525D1991E /* XMPageBarCell.m */,
+				03EE6A8D45C472C1C07E0E6C040DD08A /* XMPageBarLayout.h */,
+				8B7C212697FE696E439BB319DC704548 /* XMPageBarLayout.m */,
+				A8647A8250C396476D42117DC56D25A3 /* XMPageViewController.h */,
+				5E3E5838DDB81D23C8AE082A93D2D768 /* XMPageViewController.m */,
+				1513CF98DD6ECB68974C5F9255037034 /* XMProgressView.h */,
+				9AEA08915F08C09FF3888AC0BCD24C2C /* XMProgressView.m */,
+				68FB4E228A09234F9E7ED364491E889B /* Support Files */,
+			);
+			name = XMPageController;
+			path = XMPageController;
+			sourceTree = "<group>";
+		};
+		93C8987C450D4C02A696ED59E4F0D221 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D62724AD09EF0DBBC89099ED13D85C96 /* Pods-XMPageController */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		93FD095B5FC2A2BCC81B8E3CFC167E67 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				99C06B1B209CA23EC16EBF65CF890313 /* CoreGraphics.framework */,
+				CE59B0D97841C2542CA3D20540685C26 /* Foundation.framework */,
+				A5224A726D9EABB2D5F18E4597390EF3 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D62724AD09EF0DBBC89099ED13D85C96 /* Pods-XMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				FB63D8228A2A4B0F835238FC9F9267D7 /* Info.plist */,
+				DDE1EF46C38847963255A82074A0A699 /* Pods-XMPageController.modulemap */,
+				BAE1500A060CD68E7D43B9686700F0A6 /* Pods-XMPageController-acknowledgements.markdown */,
+				62F910E0F8172E86A1413E1D9A39429E /* Pods-XMPageController-acknowledgements.plist */,
+				2C0EE041B033E21BBC88AB33E2809E41 /* Pods-XMPageController-dummy.m */,
+				4DA2F75CE4E4408E42A9911D337BA618 /* Pods-XMPageController-frameworks.sh */,
+				2A2501C5ACB855D823D7D87EF464D59C /* Pods-XMPageController-resources.sh */,
+				13534B3DEFBB004DC18F84F072A323DC /* Pods-XMPageController-umbrella.h */,
+				11CFE95BEF7A07976095CFEC4DE89916 /* Pods-XMPageController.debug.xcconfig */,
+				DE31A1CF0C301CCDA635C92D72539447 /* Pods-XMPageController.release.xcconfig */,
+			);
+			name = "Pods-XMPageController";
+			path = "Target Support Files/Pods-XMPageController";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8908C7807D46E49145C45FDE7D308F68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56BAF33A15389001AD4681AE20D6B4B7 /* Pods-XMPageController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A88153899A10331A7E4BBB0B9B65A53C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBDED380B093929AF0D3ACFF27BAA6A6 /* XMPageBar.h in Headers */,
+				EF39309CBBB2DC1787F6E63B907181D8 /* XMPageBarCell.h in Headers */,
+				E1BE22099DF083B5698854C5A122C691 /* XMPageBarLayout.h in Headers */,
+				372FB5DCB7C4D38600FA8A959F293C20 /* XMPageController-umbrella.h in Headers */,
+				5D21493DB888D60FB08635C2C4690541 /* XMPageViewController.h in Headers */,
+				A5548B542B6D8BA6578AC6E1C848353C /* XMProgressView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9A8D82DE8159B8878DFD1A640BAC95BF /* XMPageController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B79FFED98F533970EA085E4C57AA085 /* Build configuration list for PBXNativeTarget "XMPageController" */;
+			buildPhases = (
+				4F6AFC98E8191B9E056B72E3657C77E8 /* Sources */,
+				D931BA9742B198AD63ECD4676DF7EA4F /* Frameworks */,
+				A88153899A10331A7E4BBB0B9B65A53C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XMPageController;
+			productName = XMPageController;
+			productReference = 3E36C75538214BB010BE5D287F5322BA /* XMPageController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A390218A8E13958C454AFA660973FB8C /* Pods-XMPageController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07ECACB654CF660444A549DF6ED24BC3 /* Build configuration list for PBXNativeTarget "Pods-XMPageController" */;
+			buildPhases = (
+				E25F0AF3671C36DF0A4FAF6218673B65 /* Sources */,
+				C27C7D9E15708903D7768D68E4C8AAE1 /* Frameworks */,
+				8908C7807D46E49145C45FDE7D308F68 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9166BAEEB7E9B9621F6D42D67E423EAE /* PBXTargetDependency */,
+			);
+			name = "Pods-XMPageController";
+			productName = "Pods-XMPageController";
+			productReference = 54DADB1241CBC780797B5923E62C4483 /* Pods_XMPageController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 49528106F610C5A91EAEED39A95C418B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A390218A8E13958C454AFA660973FB8C /* Pods-XMPageController */,
+				9A8D82DE8159B8878DFD1A640BAC95BF /* XMPageController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F6AFC98E8191B9E056B72E3657C77E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E447F9A390D5CA5C4C35E11B0735DEAE /* XMPageBar.m in Sources */,
+				8CD6ACE5FB86700A4E3294B2A932EBAD /* XMPageBarCell.m in Sources */,
+				A4C5DF6445379AE716C12EDAD719DF2D /* XMPageBarLayout.m in Sources */,
+				0CDCFDA895D950A5C8CCBC95126ADEB2 /* XMPageController-dummy.m in Sources */,
+				4EEB2865E3E4DE9D8790D6CC8E33CBDF /* XMPageViewController.m in Sources */,
+				B5E60501ED2DC460E12BE756B5B6ED46 /* XMProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25F0AF3671C36DF0A4FAF6218673B65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B062F5EB22FF5808914D36C4AF281E6 /* Pods-XMPageController-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9166BAEEB7E9B9621F6D42D67E423EAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XMPageController;
+			target = 9A8D82DE8159B8878DFD1A640BAC95BF /* XMPageController */;
+			targetProxy = 13BE386D4A1FD555C85EF88677515163 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B2E34480421023E35BD664B378659CD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE31A1CF0C301CCDA635C92D72539447 /* Pods-XMPageController.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-XMPageController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-XMPageController/Pods-XMPageController.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BF723F7D4FC0EE9FDB5D1B5EB7F62B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39D20CB87F5B18AFF843D58FCAD3DEE /* XMPageController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMPageController/XMPageController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMPageController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XMPageController/XMPageController.modulemap";
+				PRODUCT_MODULE_NAME = XMPageController;
+				PRODUCT_NAME = XMPageController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CA1CBCFAC3B1ACFC6A3565218B7189F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39D20CB87F5B18AFF843D58FCAD3DEE /* XMPageController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMPageController/XMPageController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMPageController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XMPageController/XMPageController.modulemap";
+				PRODUCT_MODULE_NAME = XMPageController;
+				PRODUCT_NAME = XMPageController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD14E257EF39987D527F75B6F0B7199F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11CFE95BEF7A07976095CFEC4DE89916 /* Pods-XMPageController.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-XMPageController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-XMPageController/Pods-XMPageController.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F4568DEE257655D290C2B9CEAB37C934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07ECACB654CF660444A549DF6ED24BC3 /* Build configuration list for PBXNativeTarget "Pods-XMPageController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD14E257EF39987D527F75B6F0B7199F /* Debug */,
+				B2E34480421023E35BD664B378659CD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE19F5DD95931924296F637BF18BD8F /* Debug */,
+				F4568DEE257655D290C2B9CEAB37C934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B79FFED98F533970EA085E4C57AA085 /* Build configuration list for PBXNativeTarget "XMPageController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA1CBCFAC3B1ACFC6A3565218B7189F7 /* Debug */,
+				BF723F7D4FC0EE9FDB5D1B5EB7F62B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
