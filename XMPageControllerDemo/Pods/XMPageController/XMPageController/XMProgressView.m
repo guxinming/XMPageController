@@ -153,7 +153,7 @@
 
 - (void)drawFillFlow:(CGContextRef)ctx startX:(CGFloat)startX width:(CGFloat)width {
     for (int i = 0; i < self.textArray.count; i++) {
-        
+
         NSString *text = self.textArray[i];
         CGRect rect = [self.progressFrames[i] CGRectValue];
         CGSize size = [text boundingRectWithSize:CGSizeMake(rect.size.width, 14) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : self.normalFont} context:nil].size;
@@ -167,19 +167,24 @@
         nextIndex = self.curIndex - 1 < 0 ? 0 : self.curIndex - 1;
     } else if (self.progress > self.curIndex && (int)self.progress == self.curIndex) {
         nextIndex = self.curIndex + 1 > self.progressFrames.count - 1 ? self.progressFrames.count - 1 : self.curIndex + 1;
+    } else {
+        nextIndex = (int)self.progress;
     }
+    float rate = fabs((int)self.progress - self.progress);
+    UIFont *font = [UIFont systemFontOfSize:self.selectFont.pointSize - (self.selectFont.pointSize - self.normalFont.pointSize) * rate];
+    
     
     NSString *currentText = self.textArray[self.curIndex];
     NSString *nextText = self.textArray[nextIndex];
     CGRect currentRect = [self.progressFrames[self.curIndex] CGRectValue];
     CGRect nextRect = [self.progressFrames[nextIndex] CGRectValue];
     CGSize curSize = [currentText boundingRectWithSize:CGSizeMake(currentRect.size.width, 14) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : self.normalFont} context:nil].size;
-    CGSize nextSize = [nextText boundingRectWithSize:CGSizeMake(nextRect.size.width, 14) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : self.normalFont} context:nil].size;
+    CGSize nextSize = [nextText boundingRectWithSize:CGSizeMake(nextRect.size.width, 14) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : font} context:nil].size;
     CGFloat height = curSize.height >= nextSize.height ? curSize.height : nextSize.height;
     height = height > self.frame.size.height ? self.frame.size.height : height;
     
     CGMutablePathRef circlePath = CGPathCreateMutable();
-    CGRect rect = CGRectMake(startX, (self.frame.size.height - height - 10) / 2, width, curSize.height + 10);
+    CGRect rect = CGRectMake(startX, (self.frame.size.height - height - 10) / 2, width, height + 10);
     CGPathAddRoundedRect(circlePath, nil, rect, (height + 10) / 2, (height + 10) / 2);
     CGContextAddPath(ctx, circlePath);
     CGContextSetFillColorWithColor(ctx, self.color.CGColor);
@@ -192,7 +197,9 @@
     CGPathRelease(clipPath);
     CGContextClip(ctx);
     
-    [self.textArray[self.curIndex] drawInRect:CGRectMake(currentRect.origin.x + (currentRect.size.width - curSize.width) / 2, (currentRect.size.height - curSize.height) / 2, nextSize.width, nextSize.height + 10) withAttributes:@{NSFontAttributeName:self.normalFont, NSForegroundColorAttributeName:self.selectColor}];
-    [self.textArray[nextIndex] drawInRect:CGRectMake(nextRect.origin.x + (nextRect.size.width - nextSize.width) / 2, (nextRect.size.height - nextSize.height) / 2, nextSize.width, nextSize.height + 10) withAttributes:@{NSFontAttributeName:self.normalFont, NSForegroundColorAttributeName:self.selectColor}];
+    if (self.curIndex != nextIndex) {
+           [self.textArray[self.curIndex] drawInRect:CGRectMake(currentRect.origin.x + (currentRect.size.width - curSize.width) / 2, (currentRect.size.height - curSize.height) / 2, nextSize.width, nextSize.height + 10) withAttributes:@{NSFontAttributeName:font, NSForegroundColorAttributeName:self.selectColor}];
+    }
+    [self.textArray[nextIndex] drawInRect:CGRectMake(nextRect.origin.x + (nextRect.size.width - nextSize.width) / 2, (nextRect.size.height - nextSize.height) / 2, nextSize.width, nextSize.height + 10) withAttributes:@{NSFontAttributeName:font, NSForegroundColorAttributeName:self.selectColor}];
 }
 @end
