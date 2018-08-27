@@ -1,5 +1,5 @@
 PODS:
-  - XMPageController (1.0.4)
+  - XMPageController (1.0.5)
 
 DEPENDENCIES:
   - XMPageController
@@ -9,7 +9,7 @@ SPEC REPOS:
     - XMPageController
 
 SPEC CHECKSUMS:
-  XMPageController: 9ef8e9fb6aec165bdaa3c533a0f0d2961afe07f0
+  XMPageController: 9e4aab64a7d508b8c9e4c367736d187b8f1198e7
 
 PODFILE CHECKSUM: 98276c5813d28d9fc86b3bbf0d93cdeb4f8f2ebf
 

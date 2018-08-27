@@ -34,9 +34,17 @@
     pageBar.delegate = self;
     pageBar.dataSource = self;
     pageBar.layout.normalFont = [UIFont systemFontOfSize:16];
-    pageBar.layout.selecFont = [UIFont systemFontOfSize:18];
+    
     pageBar.layout.normalColor = [UIColor grayColor];
-    pageBar.layout.selectColor = [UIColor purpleColor];
+    if (self.style == XMPageBarFillFlowProgress) {
+        pageBar.layout.selectColor = [UIColor whiteColor];
+        //建议这种样式的selectFont与normalFont一样
+        pageBar.layout.selecFont = [UIFont systemFontOfSize:16];
+    } else {
+        pageBar.layout.selectColor = [UIColor purpleColor];
+        pageBar.layout.selecFont = [UIFont systemFontOfSize:18];
+    }
+    
     pageBar.layout.barStyle = self.style;
     pageBar.layout.progressColor = [UIColor orangeColor];
     pageBar.layout.progressW = self.progressW;
