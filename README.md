@@ -17,6 +17,6 @@ pod 'XMPageController'
 ## 3.流动的样式
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fuhcgpwrzyg30bi0es4qp.gif)
 ## 4.背景流动的样式，这个样式不支持自定义cell
-![](https://ws2.sinaimg.cn/large/006tNbRwly1fujx16v7c9g30bi0es7hr.gif)
+![](https://ws1.sinaimg.cn/large/0069RVTdly1fuoib0dod2g30bi0jb4qp.gif)
 ## 5.背景边框的样式，这个样式边框的高度是progressH
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fujx29y58ug30bi0eskcr.gif)
